@@ -20,6 +20,10 @@ function rainMaker(htmlElement, width, height, frames, ms) {
 
    var rainArr = [], frameOne = [];
 
+
+
+    // Generates array of random mix  of "." and "/" characters
+
     function rainRowMaker() {
         var rainRow = "";
 
@@ -36,9 +40,16 @@ function rainMaker(htmlElement, width, height, frames, ms) {
         return rainRow;
     }
 
+
+    // Generates array of "." characters
+
     function dotRowMaker() {
         return Array(width).fill(".").join("");
     }
+
+
+    //  Creates initial two-dimensional array
+    //  which alternates between dots and rain rows
 
     for (var i = 0; i < height; i++) {
         if (i % 2 == 0) {
@@ -52,6 +63,12 @@ function rainMaker(htmlElement, width, height, frames, ms) {
         }
     }
     rainArr.push(frameOne);
+
+
+    //  Create additional frames
+    //  by copying previous frame, then
+    //  placing first nested array at end of it
+    //  then repeating for each nested column
 
     for (var i = 0; i < frames; i++) {
 
@@ -75,7 +92,13 @@ function rainMaker(htmlElement, width, height, frames, ms) {
         rainArr.push(nextFrame);
     }
 
+
+    // Joins nested arrays with break element
+
     rainArr = rainArr.map(c => c.join("<br>"))
+
+
+    // Sets interval to cycle through frames
 
     var index = 0;
     setInterval(function(){

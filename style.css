@@ -10,5 +10,6 @@
 }
 
 h5 {
-    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-family: monospace, monospace;
+    font-size: 1em;
 }
