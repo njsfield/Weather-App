@@ -92,5 +92,3 @@ function sunMaker(htmlElement, width, height, interval) {
 
 }
 
-
-sunMaker("text-canvas", 24, 8, 200);

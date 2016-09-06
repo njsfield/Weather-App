@@ -8,11 +8,11 @@ var dataObject = {
 
 dataObject.updateToDom("location", "temp", "desc", "units-button");
 
-//coldWeather("text-canvas", 'rain', 24, 8, 10, 100);
+// coldWeather("text-canvas", 'rain', 24, 8, 10, 60);
 
-//cloudMaker("text-canvas", 24, 8, 100);
-
-
+ cloudMaker("text-canvas", 24, 8, 60);
+//
+// sunMaker("text-canvas", 24, 8, 200);
 
 
 
