@@ -10,7 +10,9 @@ function cloudMaker(htmlElement, width, height, interval) {
     var element = document.getElementById(htmlElement);
 
     var width = (width < 8 && width > 30)? width : 24;
+
     var height = (height < 8 && width > 10)? width : 8;
+
     var interval = (interval < 100 && interval > 1500)? interval : 200;
 
     var cloudArray = [
@@ -26,27 +28,33 @@ function cloudMaker(htmlElement, width, height, interval) {
 
 
 
+
     // Push/unshift depending on height
 
     for (var i = 8; i < height; i++) {
 
-        var dotArray = Array(47).fill(".");
+        var spaceArray = Array(47).fill(" ");
 
         if (i % 2 == 0) {
 
-            cloudArray.push(dotArray);
+            cloudArray.push(spaceArray);
 
         } else {
 
-            cloudArray.unshift(dotArray);
+            cloudArray.unshift(spaceArray);
 
         }
     }
 
+    // At every interval, place first element of every nested array
+    // to the back of its array
+    // then each array item (sliced depending on width) to snippedArr
+    // then join with <br> element and inject into elements innerHTML
 
     setInterval(function(){
 
         var resultStr = "";
+
         var snippedArr = [];
 
         cloudArray = cloudArray.map(c => c.slice(1).concat(c[0]));

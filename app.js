@@ -6,9 +6,9 @@ var dataObject = {
     }
 }
 
-dataObject.updateToDom("location", "temp", "desc", "units-button")
+dataObject.updateToDom("location", "temp", "desc", "units-button");
 
-rainMaker("text-canvas", 24, 8, 10, 300);
+//coldWeather("text-canvas", 'rain', 24, 8, 10, 100);
 
 //cloudMaker("text-canvas", 24, 8, 100);
 
