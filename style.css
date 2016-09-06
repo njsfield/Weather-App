@@ -1,9 +1,3 @@
-#units-button {
-    color: blue;
-    cursor: pointer;
-    font-size: 17px;
-    padding: 0 0 0 0px;
-}
 
 #temp {
     display: inline-block;
@@ -11,11 +5,13 @@
 
 * {
     font-family: monospace;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
 
 body {
     width: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -27,4 +23,11 @@ body {
     margin: 0 auto;
     min-height: 30rem;
     min-width: 19rem;
+}
+
+#units-button {
+    color: blue;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 0 0 0 0px;
 }

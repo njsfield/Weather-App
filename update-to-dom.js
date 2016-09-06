@@ -84,6 +84,10 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
                     that.desc = data.weather[0].main;
                     updateDom("celcius");
 
+                // Call dataObjects choodAnimation method
+
+                that.chooseAnimation(that.desc, textCanvas);
+
                 } else {
                     console.log('error');
                 }
@@ -108,10 +112,6 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
             tempId.innerHTML = temp;
             descId.innerHTML = `'${that.desc}'`;
 
-
-            // Call dataObjects choodAnimation method
-
-            that.chooseAnimation(that.desc, textCanvas);
     }
 
 

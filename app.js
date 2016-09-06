@@ -25,6 +25,8 @@ var dataObject = {
                 coldWeather(location, 'snow', 24, 8, 10, 120);
                 break;
 
+            case "sunny":
+            case "sun":
             case "clear":
                 sunMaker(location, 24, 8, 200);
                 break;
@@ -45,6 +47,7 @@ var dataObject = {
 
 }
 
+//Initialize
 
 dataObject.updateToDom("location", "temp", "desc", "units-button", "text-canvas");
 
