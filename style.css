@@ -5,7 +5,7 @@
 
 * {
     font-family: monospace;
-    font-size: 1.05em;
+    font-size: 1.3rem;
 }
 
 body {
@@ -16,7 +16,6 @@ body {
 }
 
 .container {
-    border: 1px solid black;
     display: inline-block;
     padding: 10px;
     text-align: center;
@@ -30,4 +29,15 @@ body {
     cursor: pointer;
     font-size: 17px;
     padding: 0 0 0 0px;
+}
+
+@media screen and (min-width: 420px) {
+  * {
+    font-size: 1.5rem;
+  }
+
+  .container {
+      border: 1px solid black;
+  }
+
 }
