@@ -21,16 +21,16 @@ amount = change of flash happening, values between 0 - 10
 String.prototype.repeat = function(amount){
 
 	return Array(amount).fill(this).join("");
-}
+};
 
 
 function lightningMaker(htmlElement, interval, speed, amount) {
 
-    var interval = (interval >= 300 && interval <= 2000)? interval : 500;
+    interval = (interval >= 300 && interval <= 2000)? interval : 500;
 
-    var speed = (speed >= 50 && speed <= 3000)? speed : 200;
+    speed = (speed >= 50 && speed <= 3000)? speed : 200;
 
-    var amount = (amount >= 0 && amount <= 10)? amount : 5;
+    amount = (amount >= 0 && amount <= 10)? amount : 5;
 
     var element = document.getElementById(htmlElement);
 
@@ -68,7 +68,7 @@ function lightningMaker(htmlElement, interval, speed, amount) {
                 }
 
 
-            }, speed / 10)
+            }, speed / 10);
 
         }
 

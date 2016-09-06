@@ -34,7 +34,7 @@ function coldWeather(htmlElement, type, width, height, frames, ms) {
 
             var rand = Math.random();
 
-            if (rand < .2 && elemRow[j-1] != element && elemRow[j-2] != element) {
+            if (rand < 0.2 && elemRow[j-1] != element && elemRow[j-2] != element) {
                 elemRow += element;
             } else {
                 elemRow += " ";
@@ -55,9 +55,9 @@ function coldWeather(htmlElement, type, width, height, frames, ms) {
     //  which alternates between space and elem rows
 
     for (var i = 0; i < height; i++) {
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
 
-            frameOne.push(elemRowMaker())
+            frameOne.push(elemRowMaker());
 
         } else {
 
@@ -73,24 +73,24 @@ function coldWeather(htmlElement, type, width, height, frames, ms) {
     //  placing first nested array at end of it
     //  then repeating for each nested column
 
-    for (var i = 0; i < frames; i++) {
+    for (let i = 0; i < frames; i++) {
 
 
         var nextFrame = Array.from(elemArr[i]);
 
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
 
             nextFrame.unshift(spaceRowMaker());
-            nextFrame.pop()
+            nextFrame.pop();
         }
 
         else {
 
             nextFrame.unshift(elemRowMaker());
-            nextFrame.pop()
+            nextFrame.pop();
         }
 
-        nextFrame = nextFrame.map(c => c.slice(1).concat(c[0]))
+        nextFrame = nextFrame.map(c => c.slice(1).concat(c[0]));
 
         elemArr.push(nextFrame);
     }
@@ -98,7 +98,7 @@ function coldWeather(htmlElement, type, width, height, frames, ms) {
 
     // Joins nested arrays with break element
 
-    elemArr = elemArr.map(c => c.join("<br>"))
+    elemArr = elemArr.map(c => c.join("<br>"));
 
 
     // Sets interval to cycle through frames
@@ -110,5 +110,5 @@ function coldWeather(htmlElement, type, width, height, frames, ms) {
 
         canvas.innerHTML = elemArr[index];
 
-    }, ms)
+    }, ms);
 }

@@ -1,7 +1,5 @@
 /*** data object to hold temp, location, and weather description ***/
 
-window.onload = function() {
-
 var dataObject = {
     updateToDom: function(...args) {
 
@@ -10,7 +8,7 @@ var dataObject = {
     },
     chooseAnimation: function(setting, location) {
 
-        var setting = setting.toLowerCase();
+        setting = setting.toLowerCase();
 
         switch(setting) {
 
@@ -47,17 +45,15 @@ var dataObject = {
 
     }
 
-}
+};
+
 
 //Initialize
 
-//dataObject.updateToDom("location", "temp", "desc", "units-button", "text-canvas");
-
-dataObject.chooseAnimation("clouds", "text-canvas");
+dataObject.updateToDom("location", "temp", "desc", "units-button", "text-canvas");
 
 
-}
+ // Un-comment below to check out thunder storms in action
+// dataObject.chooseAnimation("thunderstorm", "text-canvas");
 
-
-
-
+};

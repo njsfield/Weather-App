@@ -5,15 +5,16 @@ then outputs middle section
 
 **/
 
+
 function cloudMaker(htmlElement, width, height, interval) {
 
     var element = document.getElementById(htmlElement);
 
-    var width = (width < 8 && width > 30)? width : 24;
+    width = (width < 8 && width > 30)? width : 24;
 
-    var height = (height < 8 && width > 10)? width : 8;
+    height = (height < 8 && width > 10)? width : 8;
 
-    var interval = (interval < 100 && interval > 1500)? interval : 200;
+    interval = (interval < 100 && interval > 1500)? interval : 200;
 
     var cloudArray = [
         '     ____  ____                             ___',
@@ -35,7 +36,7 @@ function cloudMaker(htmlElement, width, height, interval) {
 
         var spaceArray = Array(47).fill(" ");
 
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
 
             cloudArray.push(spaceArray);
 
@@ -59,13 +60,13 @@ function cloudMaker(htmlElement, width, height, interval) {
 
         cloudArray = cloudArray.map(c => c.slice(1).concat(c[0]));
 
-        for (row of cloudArray) {
+        for (var row of cloudArray) {
 
             snippedArr.push(row.slice(0, width));
 
         }
 
-        resultStr = snippedArr.join("<br>")
+        resultStr = snippedArr.join("<br>");
 
         element.innerHTML = resultStr;
 

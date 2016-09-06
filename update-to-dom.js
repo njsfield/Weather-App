@@ -15,10 +15,10 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
     var that = this;
 
 
-    var locationId = document.getElementById(locationId);
-    var tempId = document.getElementById(tempId);
-    var descId = document.getElementById(descId);
-    var unitsButton = document.getElementById(unitsButton);
+    locationId = document.getElementById(locationId);
+    tempId = document.getElementById(tempId);
+    descId = document.getElementById(descId);
+    unitsButton = document.getElementById(unitsButton);
 
 
     // Retrieve JSON data
@@ -36,12 +36,12 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
                 callback(data);
 
             } else {
-                callback("error")
+                callback("error");
             }
-        }
+        };
         xhr.onerror = function() {
             callback("error");
-        }
+        };
         xhr.send();
     }
 
@@ -61,21 +61,12 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
                 reject(Error("Unsuccessful"));
             }
         }
-    )})
-
-        // then use that data to request weather data
-
-        .then(function(){
+    )}).then(function(){
 
             var URL = 'http://api.openweathermap.org/data/2.5/weather?q=';
             var APPID = '&APPID=9b9d29dd1bd49a8456bdd3d33021da80';
-            var UNITS = '&units=imperial'
-            var weatherUrl =
-                URL
-                + that.city
-                + that.country
-                + APPID
-                + UNITS;
+            var UNITS = '&units=imperial';
+            var weatherUrl = URL + that.city + that.country + APPID + UNITS;
 
             getJSON(weatherUrl, function(data) {
 
@@ -91,8 +82,8 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
                 } else {
                     console.log('error');
                 }
-            })
-        })
+            });
+        });
 
 
     // After complete, update element's inner HTML
@@ -129,7 +120,7 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
             unitsButton.innerHTML = "C";
             updateDom("celcius");
         }
-    })
+    });
 
 
 }
