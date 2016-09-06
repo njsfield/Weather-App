@@ -5,11 +5,14 @@ Takes four arguments -
 2 The 'temp' Id, which is the ID of the DOM element where the temperature will be injected
 3 The 'desc' Id, which is the ID of the DOM element where the weather description be will injected
 4 The 'units' button Id, which is the ID of the DOM element where the user can click to toggle between fahrenheit/celsius
+5 The 'text canvas' Id, which is the ID of the DOM element where animation will occur
 
 
 **/
 
-function updateToDom(locationId, tempId, descId, unitsButton) {
+function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
+
+    var that = this;
 
 
     var locationId = document.getElementById(locationId);
@@ -50,8 +53,8 @@ function updateToDom(locationId, tempId, descId, unitsButton) {
         getJSON('http://ipinfo.io/json', function(data) {
 
             if (data != "error") {
-                this.city = data.city;
-                this.country = data.country;
+                that.city = data.city;
+                that.country = data.country;
                 resolve();
 
             } else {
@@ -69,16 +72,16 @@ function updateToDom(locationId, tempId, descId, unitsButton) {
             var UNITS = '&units=imperial'
             var weatherUrl =
                 URL
-                + this.city
-                + this.country
+                + that.city
+                + that.country
                 + APPID
                 + UNITS;
 
             getJSON(weatherUrl, function(data) {
 
                 if (data != "error") {
-                    this.temp = data.main.temp;
-                    this.desc = data.weather[0].main;
+                    that.temp = data.main.temp;
+                    that.desc = data.weather[0].main;
                     updateDom("celcius");
 
                 } else {
@@ -95,15 +98,20 @@ function updateToDom(locationId, tempId, descId, unitsButton) {
             var temp;
 
             if (units == 'fahrenheit') {
-                temp = `${(this.temp).toFixed(0)}°`;
+                temp = `${(that.temp).toFixed(0)}°`;
 
             } else {
-                temp = `${((this.temp - 32) * 0.5555).toFixed(0)}°`;
+                temp = `${((that.temp - 32) * 0.5555).toFixed(0)}°`;
             }
 
-            locationId.innerHTML = `${this.city}, ${this.country}`;
+            locationId.innerHTML = `${that.city}, ${that.country}`;
             tempId.innerHTML = temp;
-            descId.innerHTML = `'${this.desc}'`;
+            descId.innerHTML = `'${that.desc}'`;
+
+
+            // Call dataObjects choodAnimation method
+
+            that.chooseAnimation(that.desc, textCanvas);
     }
 
 
