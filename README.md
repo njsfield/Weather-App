@@ -12,7 +12,7 @@ A Web App to display the current weather for your city/location
 
 ## Contributors
 
-Feel free to submit feedback, pull and & customise! 
+Feel free to submit feedback, pull and & customise! Thanks:)
 
 
 ## View on Codepen
