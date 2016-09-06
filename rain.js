@@ -22,7 +22,7 @@ function rainMaker(htmlElement, width, height, frames, ms) {
 
 
 
-    // Generates array of random mix  of "." and "/" characters
+    // Generates array of random mix  of " " and "/" characters
 
     function rainRowMaker() {
         var rainRow = "";
@@ -34,22 +34,22 @@ function rainMaker(htmlElement, width, height, frames, ms) {
             if (rand < .2 && rainRow[j-1] != "/" && rainRow[j-2] != "/") {
                 rainRow += "/";
             } else {
-                rainRow += ".";
+                rainRow += " ";
             }
         }
         return rainRow;
     }
 
 
-    // Generates array of "." characters
+    // Generates array of " " characters
 
-    function dotRowMaker() {
-        return Array(width).fill(".").join("");
+    function spaceRowMaker() {
+        return Array(width).fill(" ").join("");
     }
 
 
     //  Creates initial two-dimensional array
-    //  which alternates between dots and rain rows
+    //  which alternates between space and rain rows
 
     for (var i = 0; i < height; i++) {
         if (i % 2 == 0) {
@@ -58,7 +58,7 @@ function rainMaker(htmlElement, width, height, frames, ms) {
 
         } else {
 
-            frameOne.push(dotRowMaker());
+            frameOne.push(spaceRowMaker());
 
         }
     }
@@ -77,7 +77,7 @@ function rainMaker(htmlElement, width, height, frames, ms) {
 
         if (i % 2 == 0) {
 
-            nextFrame.unshift(dotRowMaker());
+            nextFrame.unshift(spaceRowMaker());
             nextFrame.pop()
         }
 

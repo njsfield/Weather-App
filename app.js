@@ -8,7 +8,9 @@ var dataObject = {
 
 dataObject.updateToDom("location", "temp", "desc", "units-button")
 
-//rainMaker("text-canvas", 24, 8, 10, 50);
+rainMaker("text-canvas", 24, 8, 10, 300);
+
+//cloudMaker("text-canvas", 24, 8, 100);
 
 
 

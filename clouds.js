@@ -11,6 +11,7 @@ function cloudMaker(htmlElement, width, height, interval) {
 
     var width = (width < 8 && width > 30)? width : 24;
     var height = (height < 8 && width > 10)? width : 8;
+    var interval = (interval < 100 && interval > 1500)? interval : 200;
 
     var cloudArray = [
         '     ____  ____                             ___',
@@ -64,6 +65,3 @@ function cloudMaker(htmlElement, width, height, interval) {
 
 
 }
-
-
-cloudMaker("text-canvas", 24, 8, 200);
