@@ -3,7 +3,6 @@ var locationElement = document.getElementById("location");
 var tempElement = document.getElementById("temp");
 var descElement = document.getElementById("desc");
 var unitsButton = document.getElementById("units-button");
-var textCanvas = document.getElementById("text-canvas");
 
 
 function getJSON(url, callback) {
@@ -77,79 +76,8 @@ unitsButton.addEventListener("click",function(){
 })
 
 
+rainMaker("text-canvas", 24, 8, 4, 100);
 
-var rainArr = [];
-var frameOne = [];
-
-
-function rainRowMaker() {
-    var rainRow = "";
-        for (var j = 0; j < 24; j++) {
-
-            var rand = Math.random();
-
-            if (rand < .2 && rainRow[j-1] != "/" && rainRow[j-2] != "/") {
-                rainRow += "/";
-            } else {
-                rainRow += ".";
-            }
-     }
-    return rainRow;
-}
-
-
-function dotRowMaker() {
-    return Array(24).fill(".").join("");
-}
-
-
-
-for (var i = 0; i < 8; i++) {
-    if (i % 2 == 0) {
-
-        frameOne.push(rainRowMaker())
-
-    } else {
-
-        frameOne.push(dotRowMaker());
-
-    }
-}
-
-rainArr.push(frameOne);
-
-for (var i = 0; i < 4; i++) {
-
-
-    var nextFrame = Array.from(rainArr[i]);
-
-    if (i % 2 == 0) {
-
-        nextFrame.unshift(dotRowMaker());
-        nextFrame.pop()
-    }
-
-    else {
-
-        nextFrame.unshift(rainRowMaker());
-        nextFrame.pop()
-    }
-
-    nextFrame = nextFrame.map(c => c.slice(1).concat(c[0]))
-
-    rainArr.push(nextFrame);
-}
-
-rainArr = rainArr.map(c => c.join("<br>"))
-
-var index = 0;
-setInterval(function(){
-
-    index == 4? index = 0: index ++;
-
-    textCanvas.innerHTML = rainArr[index];
-
-}, 100)
 
 
 
