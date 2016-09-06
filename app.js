@@ -1,5 +1,7 @@
 /*** data object to hold temp, location, and weather description ***/
 
+window.onload = function() {
+
 var dataObject = {
     updateToDom: function(...args) {
 
@@ -49,7 +51,12 @@ var dataObject = {
 
 //Initialize
 
-dataObject.updateToDom("location", "temp", "desc", "units-button", "text-canvas");
+//dataObject.updateToDom("location", "temp", "desc", "units-button", "text-canvas");
+
+dataObject.chooseAnimation("clouds", "text-canvas");
+
+
+}
 
 
 
