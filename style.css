@@ -5,7 +5,7 @@
 
 * {
     font-family: monospace;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 body {
@@ -32,9 +32,6 @@ body {
 }
 
 @media screen and (min-width: 420px) {
-  * {
-    font-size: 1.5rem;
-  }
 
   .container {
       border: 1px solid black;

@@ -56,4 +56,4 @@ dataObject.updateToDom("location", "temp", "desc", "units-button", "text-canvas"
  // Un-comment below to check out thunder storms in action
 // dataObject.chooseAnimation("thunderstorm", "text-canvas");
 
-};
+//};

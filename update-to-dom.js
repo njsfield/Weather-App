@@ -50,11 +50,11 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
 
     var jsonPromise = new Promise(function(resolve,reject){
 
-        getJSON('http://ipinfo.io/json', function(data) {
+        getJSON('https://freegeoip.net/json/', function(data) {
 
             if (data != "error") {
                 that.city = data.city;
-                that.country = data.country;
+                that.country = data.country_code;
                 resolve();
 
             } else {
@@ -63,7 +63,7 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
         }
     )}).then(function(){
 
-            var URL = 'http://api.openweathermap.org/data/2.5/weather?q=';
+            var URL = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=';
             var APPID = '&APPID=9b9d29dd1bd49a8456bdd3d33021da80';
             var UNITS = '&units=imperial';
             var weatherUrl = URL + that.city + that.country + APPID + UNITS;
