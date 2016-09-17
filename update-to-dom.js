@@ -102,6 +102,7 @@ function updateToDom(locationId, tempId, descId, unitsButton, textCanvas) {
             locationId.innerHTML = `${that.city}, ${that.country}`;
             tempId.innerHTML = temp;
             descId.innerHTML = `'${that.desc}'`;
+            unitsButton.style.color = "blue";
 
     }
 

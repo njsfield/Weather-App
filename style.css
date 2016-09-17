@@ -25,11 +25,38 @@ body {
 }
 
 #units-button {
-    color: blue;
+    color: white;
     cursor: pointer;
     font-size: 17px;
     padding: 0 0 0 0px;
 }
+
+
+/* load dots */
+
+#load-dot1, #load-dot3, #load-dot3 {
+  opacity: 1;
+}
+
+#load-dot1 {
+   animation: dotpulse 1s ease infinite;
+}
+
+#load-dot2 {
+  animation: dotpulse 1s ease .2s infinite;
+}
+
+#load-dot3 {
+  animation: dotpulse 1s ease .4s infinite;
+}
+
+
+@keyframes dotpulse {
+  0% {opacity: 1;}
+  33% {opacity: 0;}
+  66% {opacity: 1;}
+}
+
 
 @media screen and (min-width: 420px) {
 
